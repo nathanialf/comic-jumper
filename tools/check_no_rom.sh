@@ -23,6 +23,9 @@
 #      tracked anyway.
 #   7. A run of four or more hex .byte/.quad/.long lines in a tracked source
 #      (a copied dump).
+#   8. Any tracked file that holds a NUL byte. Everything this repository
+#      tracks is text, so a binary file under any name or extension (a slice
+#      from the middle of the image carries no magic) is refused.
 #
 # Exit non-zero on any hit.
 # =============================================================================
@@ -119,6 +122,15 @@ for f in "${files[@]}"; do
     case "$f" in *.s|*.S|*.asm|*.c|*.cpp|*.h|*.hpp|*.inc) ;; *) continue ;; esac
     if awk '/^[[:space:]]*\.(byte|quad|long|word|short)[[:space:]]+0x/{if(++c>=4)hit=1;next}{c=0}END{exit !hit}' "$f"; then
         note "run of hex .byte/.quad/.long lines (a dump from the executable?): $f"
+    fi
+done
+
+# --- 8. binary content under any name ---
+for f in "${files[@]}"; do
+    [[ -z "$f" ]] && continue
+    [[ ! -f "$f" ]] && continue
+    if [[ "$(LC_ALL=C tr -d '\000' < "$f" | wc -c)" != "$(wc -c < "$f")" ]]; then
+        note "binary content (a NUL byte) in a tracked file: $f"
     fi
 done
 
