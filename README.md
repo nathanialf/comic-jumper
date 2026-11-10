@@ -30,7 +30,7 @@ executable says about its own build.
 ## Quickstart
 
 ```sh
-git clone <this repository>
+git clone https://github.com/nathanialf/comic-jumper.git
 cd comic-jumper
 mkdir -p baserom
 ln -s "/path/to/your/Comic Jumper/58410A20/000D0000/<content file>" baserom/CJ_RETAIL.pkg
