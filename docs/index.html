@@ -13,9 +13,9 @@
    * The look is ported from the author's site (defnf.com, the
    * React-Portfolio Next.js app): near-black ground, hairline borders,
    * square corners, no shadows anywhere, dense mono micro-labels, one
-   * serif for headings, and a single teal accent (#3f9e7c, the colour
-   * chosen for this project's card on the portfolio, src/data/projects.ts
-   * hoverColor; ICO's dashboard uses that card's sand, #d9c9a3).
+   * serif for headings, and a single yellow accent (#ffd93b, smiley
+   * yellow, the colour chosen for this project; ICO's dashboard uses sand,
+   * #d9c9a3, and The Last Guardian's teal, #3f9e7c).
    *
    * FONTS: the portfolio loads Playfair Display / Outfit / JetBrains Mono
    * from next/font (src/app/layout.tsx:52-68). Fetching them here would be
@@ -24,7 +24,7 @@
    * system stack behind it. Nothing is downloaded either way.
    *
    * COLOUR: the ramp is the portfolio's own (Tailwind-neutral #0a0a0a ->
-   * #f9fafb, plus the project card's teal). The portfolio spends #404040 / #525252 /
+   * #f9fafb, plus the project's yellow). The portfolio spends #404040 / #525252 /
    * #737373 on small text, which measures 1.9:1 / 2.5:1 / 4.2:1 on its own
    * #0a0a0a ground. Every one of those roles is taken ONE STEP UP the same
    * ladder here, so text clears WCAG 1.4.3 (4.5:1) and control outlines
@@ -50,11 +50,11 @@
                                    2.5:1 and would fail WCAG 1.4.11         */
 
     /* -- accent + status ---------------------------------------------- */
-    --accent:#3f9e7c;  /* 6.0:1 on --bg; 6.0:1 under #0a0a0a text, 3.3:1 under white, so the
+    --accent:#ffd93b;  /* 14.4:1 on --bg; 14.4:1 under #0a0a0a text, 1.4:1 under white, so the
                           fill takes dark text: see --on-accent */
-    --on-accent:#0a0a0a;              /* 12.1:1 the other way round          */
+    --on-accent:#0a0a0a;              /* 14.4:1 the other way round          */
     /* Focus is its OWN channel, not the accent: the selected segment is
-       already an accent-coloured fill, and a sand ring on a sand button is
+       already an accent-coloured fill, and an accent ring on an accent button is
        1:1. #f9fafb (MainLayout.module.css:225) is 19:1 on --bg, and the 2px
        outline-offset keeps --bg between the ring and any fill it sits on. */
     --focus:#f9fafb;
