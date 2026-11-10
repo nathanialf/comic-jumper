@@ -1,0 +1,12 @@
+# SHA-256 of the target's base files, keyed by basename. Written once by
+# tools/extract_pkg.py from the user's own package; verified by
+# tools/verify_base.py. NEVER EDIT: a mismatch means a different package
+# or a changed tool, and either is a finding, not a typo.
+#
+# Xbox Live Arcade retail package, version 0x101 (58410A20)
+#   CJ_RETAIL.pkg  the package as the user supplies it
+#   default.xex    the executable as the package holds it
+#   default.pe     its image, decrypted and expanded (the PE as loaded)
+14fc885ceee2a0182b45ef1ca09a45d5a1d5f3323c25da97fd9de273812443ea  CJ_RETAIL.pkg
+65d4b32ebde453fdbb41eb1c3852fc514d015a81307bc82296e545ef0443ae7a  default.xex
+c6bbbc74bf03cca44464dc7796cf7f52c3e2bc91314dc863b199074ef0ab78f3  default.pe

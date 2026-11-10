@@ -1,0 +1,96 @@
+# =============================================================================
+# IP PROTECTION: DO NOT REMOVE OR LOOSEN THESE RULES WITHOUT REVIEW
+# =============================================================================
+# This repository must never contain package data, executables, extracted
+# assets, or any material owned by Twisted Pixel Games or Microsoft.
+# The rules below ignore every common Xbox 360 dump and extracted-asset format.
+# If you need to add a real source file whose name happens to collide, prefer
+# renaming the file rather than weakening the patterns.
+# =============================================================================
+
+# --- Packages, executables and their debug files ---
+*.pkg
+*.xex
+*.xexp
+*.pe
+*.exe
+*.dll
+*.pdb
+*.xdb
+*.bin
+baserom/
+default.xex
+default.pe
+58410A20*
+CJ_*.pkg
+
+# --- Build outputs that may embed data derived from the executable ---
+# (build/<slug>/ per target)
+build/
+*.o
+*.a
+*.lib
+*.obj
+*.map
+*.ll
+*.bc
+
+# --- Extracted assets (the package's own files) ---
+assets/
+*.xpr
+*.bik
+*.xwb
+*.xsb
+*.xgs
+*.ptc
+*.xma
+
+# --- Analysis databases ---
+*.gpr
+*.rep/
+*.i64
+*.idb
+*.bndb
+
+# --- Toolchain / venv / editor noise ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.mypy_cache/
+.pytest_cache/
+.idea/
+.vscode/
+!.vscode/extensions.json
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- Local config overrides ---
+.env
+.env.local
+config/local.*
+
+# --- Local toolchain (tools/setup.sh: compilers and fetched tools) ---
+tools/cc/
+tools/ext/
+tools/ghidra/
+
+# --- Agent guidance / local-only ---
+# CLAUDE.md is auto-loaded by Claude Code and is the agent's local preamble;
+# it stays out of the public repo.
+CLAUDE.md
+.claude/
+
+# --- Ninja build files (tools/gen_ninja.py will write build.ninja) ---
+build.ninja
+.ninja_log
+.ninja_deps
+
+# --- Working notes kept on the maintainer's machine ---
+docs/NOTES.md
+docs/COOKBOOK.md
+
+# --- Assembled GitHub Pages site (.github/scripts/build_pages_site.sh) ---
+_site/

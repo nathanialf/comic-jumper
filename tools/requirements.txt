@@ -1,0 +1,6 @@
+# Python packages the build and its tools use, installed into .venv by
+# tools/setup.sh.
+cryptography        # tools/xex.py decrypts the executable (AES)
+capstone            # disassembly from Python (the compare stage)
+ninja               # .venv/bin/ninja runs build.ninja (the hooks call it there)
+clang-format>=19    # tools/format.sh

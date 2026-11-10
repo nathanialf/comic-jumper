@@ -1,0 +1,5 @@
+# Ruled exceptions to tools/check_dev_native.py: `<path>:<line prefix> <reason>`.
+# A site listed here is reported as ALLOWED on every run, never silent. An
+# exception needs the base's own evidence that the construct is the
+# developer's; a construct that exists to steer codegen is never allowed
+# here, it is removed.
